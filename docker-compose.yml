@@ -1,0 +1,17 @@
+version: '3.8'  # Specify the version of the Docker Compose file
+
+services:
+  postgres:
+    container_name: threads-db
+    image: postgres
+    ports:
+      - "2000:2000"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: threads
+      POSTGRES_PASSWORD: threads
+
+volumes:
+  postgres_data:
