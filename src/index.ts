@@ -1,15 +1,12 @@
-import express, { query } from "express";
-import { ApolloServer } from '@apollo/server';
-import { expressMiddleware } from '@apollo/server/express4';
-import { server } from "typescript";
-import createApolloGraphqlServer from "./graphql";
-import { prismaClient } from "./lib/db";
+import express from "express";import { ApolloServer } from '@apollo/server';
+import { expressMiddleware } from '@apollo/server/express4';import { server } from "typescript";
+import createApolloGraphqlServer from "./graphql";import { prismaClient } from "./lib/db";
 
 
 
 async function init() {
     const app =express();
-const PORT= Number(process.env.PORT)  ||8000
+    const PORT= Number(process.env.PORT)  ||8000
 
 app.use (express.json());
 
